@@ -1,12 +1,26 @@
 ---
-title: "Welcome To My Blog Template"
-author: "Emi Tanaka"
-date: "2022-07-18"
-categories: [news]
+title: "Beyond the Expensive Sensor: Using High-Frequency Data and Models to Explain Nitrate Variation in Freshwater Streams"
+toc: true
+author: "Nutchanok Saitin"
+date: "2025-10-10"
+categories: [environment, data-story]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+# Why Understanding Nitrate Pollution Matters
 
-![](thumbnail.jpg)
+Nitrate is an essential nutrient until it becomes too much of a good thing. In rivers and streams, excessive nitrate fuels algal blooms and depletes oxygen, threatening fish and invertebrates. Understanding how nitrate levels change through time is vital for protecting ecosystems and managing water quality.
+
+Yet tracking this pollution is harder than it sounds. High-frequency sensors now record vast streams of data on cheaper variables like **water temperature**, **oxygen**, and **turbidity** every few minutes. But the sensors that directly measure nitrate are **extremely expensive**. Managers must either scatter a few across huge catchments, leaving data gaps, or rely on manual sampling that is slow and costly.
+
+Even with plenty of data, another challenge remains: **the relationships between nitrate and other water-quality variables are complex**. Simple linear models can’t fully capture the non-linear dynamics that vary from one watershed to another.
+
+So the key question becomes:  
+*Can we use the data from cheaper sensors, combined with advanced models, to understand nitrate without relying on costly instruments?*
+
+# What the Data Revealed
+
+# Why These Findings Matter
+
+
 
 
