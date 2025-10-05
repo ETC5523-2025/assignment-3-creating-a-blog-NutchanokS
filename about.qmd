@@ -16,4 +16,8 @@ about:
 
 ---
 
+# Nutchanok Saitin
+
+I am a Master of Business Analytics student at Monash University, with several years of experience working in the accounting field in Thailand. My background in finance and accounting provided a solid foundation in numerical reasoning and business operations. To expand my career opportunities and develop advanced analytical skills, I decided to pursue higher education in business analytics.
+
 This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
