@@ -6,7 +6,7 @@ date: "2025-10-10"
 categories: [environment, data-story]
 ---
 
-# Why Understanding Nitrate Pollution Matters
+# Why Understanding Nitrate Pollution Matters?
 
 Nitrate is an essential nutrient until it becomes too much of a good thing. In rivers and streams, excessive nitrate fuels algal blooms and depletes oxygen, threatening fish and invertebrates. Understanding how nitrate levels change through time is vital for protecting ecosystems and managing water quality.
 
@@ -17,9 +17,98 @@ Even with plenty of data, another challenge remains: **the relationships between
 So the key question becomes:  
 *Can we use the data from cheaper sensors, combined with advanced models, to understand nitrate without relying on costly instruments?*
 
-# What the Data Revealed
+# What the Data Revealed?
 
-# Why These Findings Matter
+To explore that question, a recent study by [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) turned to data from the U.S. National Ecological Observatory Network (NEON), one of the world’s largest open environmental monitoring programs.
+
+NEON’s high-frequency sensors collect water-quality data every 15 minutes from diverse ecosystems across the country, creating a detailed picture of how rivers behave through time.
+
+For this analysis, the researchers focused on three ecologically distinct watersheds: the Arikaree River in semi-arid Colorado, Caribou Creek in subarctic Alaska, and Lewis Run in temperate Virginia @fig-map. Together, these sites offered over 70,000 data points each, spanning two full years of sensor readings between 2018 and 2019.
+
+::: {#fig-map}
+```{r}
+#| echo: false
+#| message: false
+#| warning: true
+
+# Load leaflet package
+library(leaflet)
+
+# Define coordinates for each site
+sites <- data.frame(
+  Site = c("Arikaree River (Colorado)", 
+           "Caribou Creek (Alaska)", 
+           "Lewis Run (Virginia)"),
+  lat = c(39.758206, 65.153224, 39.095637),
+  lon = c(-102.44715, -147.50397, -77.983216)
+)
+
+# Create leaflet map
+leaflet(sites) |>
+  addTiles() |>
+  addCircleMarkers(
+    ~lon, ~lat,
+    popup = ~Site,
+    label = ~Site,
+    radius = 6,
+    color = "#006DAE",
+    fillOpacity = 0.9
+  ) |>
+  addProviderTiles("CartoDB.Positron") |>
+  addLegend("bottomright", colors = "#006DAE", labels = "Study Sites", title = "NEON Sensor Locations")
+```
+Figure 1. Map showing the three NEON study sites across the United States from the study by Kermorvant et al. (2023).
+:::
+
+Each site continuously measured variables such as water temperature, dissolved oxygen, turbidity, specific conductance, and surface water elevation, while nitrate levels were monitored using a smaller number of costly, specialised sensors. These rich, real-time datasets provided the foundation to test whether advanced modelling could capture nitrate dynamics without relying solely on expensive instrumentation.
+
+Instead of fitting simple linear relationships, the researchers used Generalised Additive Mixed Models (GAMMs), flexible algorithms that can describe curved, non-linear patterns and account for autocorrelation in time-series data. In simple terms, the model learns how nitrate levels change through time and under different conditions, even when those relationships aren’t straightforward.
+
+The results were striking. Across all sites, the GAMM explained around 99% of nitrate variation, far surpassing simpler models that only captured 75–85% of variation. As shown in @tbl-sites, adding the mixed-model component dramatically improved accuracy.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-sites
+#| tbl-cap: "Model performance comparison across the three NEON study sites."
+#| tbl-cap-location: bottom
+
+library(dplyr)
+library(knitr)
+library(kableExtra)
+
+sites <- tibble::tibble(
+  Site = c("Arikaree", "Caribou", "Lewis Run"),
+  Location = c("Colorado (Semi-arid)", "Alaska (Subarctic)", "Virginia (Temperate)"),
+  `GAM Performance` = c("75%", "83%", "85%"),
+  `GAMM Performance` = c("99%", "99%", "99%"),
+  Improvement = c("+24%", "+16%", "+14%")
+)
+
+kbl(sites, booktabs = TRUE, align = "lcccc", longtable = TRUE) |>
+  kable_styling(latex_options = "striped", full_width = FALSE)
+```
+
+To visualise differences in water-quality conditions, @fig-perf summarises the distributions of key variables across the three NEON sites.
+
+**Lewis Run**, influenced by urban and agricultural runoff, shows the highest and most variable nitrate levels alongside elevated turbidity and specific conductance, typical of disturbed catchments. 
+
+In contrast, **Caribou Creek** in Alaska remains low and stable across all parameters, reflecting its pristine sub-arctic environment.
+
+The **Arikaree River** lies between these extremes, with low nitrate but wide variation in temperature due to its semi-arid climate.
+
+These differences highlight the environmental diversity captured by the high-frequency sensors used in the study.
+
+![Water-quality boxplots for the three NEON sites, showing large differences in nitrate levels and overall variability. Source: Kermorvant et al. (2023, Figure 1).](fig2.png){#fig-perf fig-align="center" width=70% fig-pos="H"}
+
+Overall, the analysis confirms that high-frequency data from inexpensive, routinely measured sensors can successfully explain nitrate variation when combined with advanced modelling.
+By capturing 99% of nitrate dynamics without relying on costly instruments, this approach proves that complex water-quality behaviour can be understood through smarter use of existing technology.
+These results not only answer the central question, showing that affordable sensors and data science can replace expensive monitoring systems, but also highlight a path toward more sustainable freshwater management.
+
+# Why These Findings Matter?
+
+
 
 
 
