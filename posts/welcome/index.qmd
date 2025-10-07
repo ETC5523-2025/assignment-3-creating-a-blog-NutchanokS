@@ -1,5 +1,5 @@
 ---
-title: "Beyond the Expensive Sensor: Using High-Frequency Data and Models to Explain Nitrate Variation in Freshwater Streams"
+title: "Beyond the Expensive Sensor: Understanding Nonlinear Nitrate Relationships Across Diverse Watersheds"
 toc: true
 author: "Nutchanok Saitin"
 date: "2025-10-10"
@@ -107,8 +107,6 @@ By capturing 99% of nitrate dynamics without relying on costly instruments, this
 These results not only answer the central question, showing that affordable sensors and data science can replace expensive monitoring systems, but also highlight a path toward more sustainable freshwater management.
 
 # Why These Findings Matter?
-
-
 
 
 
