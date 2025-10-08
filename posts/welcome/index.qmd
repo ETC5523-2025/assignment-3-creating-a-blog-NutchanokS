@@ -66,7 +66,7 @@ leaflet(sites) |>
   addProviderTiles("CartoDB.Positron") |>
   addLegend("bottomright", colors = "#006DAE", labels = "Study Sites", title = "NEON Sensor Locations")
 ```
-Figure 1. Map showing the three NEON study sites across the United States from the study by Kermorvant et al. (2023).
+Map showing the three NEON study sites across the United States from the study by Kermorvant et al. (2023).
 :::
 
 Each site continuously measured water temperature, dissolved oxygen, turbidity, specific conductance, and surface-water elevation, while nitrate levels were monitored using a smaller number of costly, specialised sensors.
