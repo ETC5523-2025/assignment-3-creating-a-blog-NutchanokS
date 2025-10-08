@@ -1,8 +1,9 @@
 ---
-title: "About"
+title: "Nutchanok Saitin"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
+  image-shape: round
   links:
     - icon: github
       text: Github
@@ -16,8 +17,8 @@ about:
 
 ---
 
-# Nutchanok Saitin
+Hi there!👋 I am a Master of Business Analytics student at Monash University, building on a strong foundation in accounting and finance. I hold a Bachelor’s degree in Accounting from Thammasat University, where I graduated with first-class honours.
 
-I am a Master of Business Analytics student at Monash University, with several years of experience working in the accounting field in Thailand. My background in finance and accounting provided a solid foundation in numerical reasoning and business operations. To expand my career opportunities and develop advanced analytical skills, I decided to pursue higher education in business analytics.
+Before pursuing postgraduate study, I worked in auditing and accounting roles within the manufacturing and oil & gas industries. These experiences strengthened my analytical and problem-solving skills and sparked my interest in using data-driven insights to improve business performance.
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+Now, I’m passionate about combining my accounting background with modern analytics tools to turn data into actionable strategies that drive better decisions and sustainable business value.
