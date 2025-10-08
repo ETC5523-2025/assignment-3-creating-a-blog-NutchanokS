@@ -6,7 +6,7 @@ date: "2025-10-10"
 categories: [environment, data-story]
 ---
 
-# The Hidden Cost of Measuring Nitrate
+## The Hidden Cost of Measuring Nitrate
 
 Nitrate is essential for life but in excess, it becomes toxic to rivers and streams. 
 
@@ -22,13 +22,17 @@ That’s why researchers have begun asking a new question:
 
 > *Can we use the data from cheaper sensors, combined with advanced models, to understand nitrate without relying on costly instruments?*
 
-# What the Data Revealed?
+## Understanding Nitrate Through Smart Data
 
-To explore that question, a recent study by [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) turned to data from the U.S. National Ecological Observatory Network (NEON), one of the world’s largest open environmental monitoring programs.
+### Uncovering Nitrate Patterns from High-Frequency Data
 
-NEON’s high-frequency sensors collect water-quality data every 15 minutes from diverse ecosystems across the country, creating a detailed picture of how rivers behave through time.
+Building on that question, the study by [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) provides a powerful real-world test of whether cheaper sensor data can indeed reveal how nitrate behaves in rivers.
 
-For this analysis, the researchers focused on three ecologically distinct watersheds: the Arikaree River in semi-arid Colorado, Caribou Creek in subarctic Alaska, and Lewis Run in temperate Virginia @fig-map. Together, these sites offered over 70,000 data points each, spanning two full years of sensor readings between 2018 and 2019.
+To investigate this, the researchers analysed high-frequency water-quality records from the National Ecological Observatory Network (NEON), a U.S. program that publishes open, standardised environmental data.
+
+NEON’s in-situ sensors collect readings every 15 minutes, creating detailed time-series data that capture how rivers change through seasons, storm events, and daily cycles.
+
+For this analysis, the researchers focused on three ecologically distinct watersheds: the **Arikaree River** in semi-arid Colorado, **Caribou Creek** in subarctic Alaska, and **Lewis Run** in temperate Virginia (@fig-map). Together, these sites offered over 70,000 time-stamped measurements collected between 2018 and 2019, spanning wide environmental gradients from frozen tundra to warm agricultural plains.
 
 ::: {#fig-map}
 ```{r}
@@ -65,11 +69,49 @@ leaflet(sites) |>
 Figure 1. Map showing the three NEON study sites across the United States from the study by Kermorvant et al. (2023).
 :::
 
-Each site continuously measured variables such as water temperature, dissolved oxygen, turbidity, specific conductance, and surface water elevation, while nitrate levels were monitored using a smaller number of costly, specialised sensors. These rich, real-time datasets provided the foundation to test whether advanced modelling could capture nitrate dynamics without relying solely on expensive instrumentation.
+Each site continuously measured water temperature, dissolved oxygen, turbidity, specific conductance, and surface-water elevation, while nitrate levels were monitored using a smaller number of costly, specialised sensors.
 
-Instead of fitting simple linear relationships, the researchers used Generalised Additive Mixed Models (GAMMs), flexible algorithms that can describe curved, non-linear patterns and account for autocorrelation in time-series data. In simple terms, the model learns how nitrate levels change through time and under different conditions, even when those relationships aren’t straightforward.
+These rich, real-time datasets provided the foundation to test whether advanced modelling could capture nitrate dynamics without relying solely on expensive nitrate instrumentation.
 
-The results were striking. Across all sites, the GAMM explained around 99% of nitrate variation, far surpassing simpler models that only captured 75–85% of variation. As shown in @tbl-sites, adding the mixed-model component dramatically improved accuracy.
+### Capturing Rapid Change in Rivers
+
+High-frequency data reveal short-term river fluctuations that traditional grab-sampling often misses.
+
+As shown in @fig-diel, the upper panels display daily cycles in temperature, oxygen, and other variables, showing rivers “breathe” through natural light and photosynthesis patterns.
+The lower panels show storm or flow events, with sharp spikes in turbidity or water level as runoff enters the system.
+
+Such fine-grained temporal resolution demonstrates why continuous monitoring with cheaper sensors is so powerful — it captures the fast processes that shape nitrate concentration but are invisible in sparse, manual sampling. However, to interpret these complex, non-linear dynamics, a flexible modelling approach is essential.
+
+![High-frequency time-series for the three NEON sites, showing daily cycles and short-term flow events in water-quality variables. Source: Kermorvant et al. (2023, Figure 2).](fig2.png){#fig-diel fig-align="center" width=80% fig-pos="H"}
+
+### Modelling Relationships Beyond Straight Lines
+
+To make sense of these dynamic signals, the researchers used Generalised Additive Mixed Models (GAMMs), a flexible statistical method capable of describing non-linear patterns and time dependence in water-quality data.
+
+Each model used six predictor variables from low-cost sensors:
+
+- specific conductance
+- dissolved oxygen
+- temperature
+- turbidity (log-transformed)
+- surface-water elevation
+- time (to capture seasonal cycles).
+
+GAMMs fit smooth curves instead of straight lines, allowing the model to learn relationships that shift under different conditions.
+
+For example, nitrate may rise with temperature up to a threshold, then fall as biological uptake increases which are patterns that linear models would miss.
+
+As illustrated in @fig-gamm, these smooth relationships differ between sites: nitrate rose with conductivity at Lewis Run, indicating nutrient-rich runoff, while at Caribou Creek, temperature showed a thaw-related seasonal pulse.
+
+This diversity confirms that real rivers don’t behave linearly, reinforcing the need for flexible models like GAMMs to uncover how cheap sensor data relate to nitrate.
+
+![Smooth relationships between nitrate concentration and key water-quality variables across the three NEON study sites, showing non-linear patterns captured by the GAMM model. Source: Kermorvant et al. (2023, Figure 3).](fig3.png){#fig-gamm fig-align="center" width=80% fig-pos="H"}
+
+### What the Models Revealed
+
+Across all sites, the GAMM explained around 99% of nitrate variation, far exceeding the 75–85% captured by simpler Generalised Additive Models (GAMs) that lacked the mixed-model time component (Kermorvant et al., 2023).
+
+This shows that even with only inexpensive sensor data, advanced models can reconstruct nearly all the behavior of nitrate observed by costly instruments (@tbl-sites).
 
 ```{r}
 #| echo: false
@@ -91,28 +133,42 @@ sites <- tibble::tibble(
   Improvement = c("+24%", "+16%", "+14%")
 )
 
-kbl(sites, booktabs = TRUE, align = "lcccc", longtable = TRUE) |>
+kbl(sites, booktabs = TRUE, align = "llrrr", longtable = TRUE) |>
   kable_styling(latex_options = "striped", full_width = FALSE)
 ```
 
-To visualise differences in water-quality conditions, @fig-perf summarises the distributions of key variables across the three NEON sites.
+These results confirm that affordable, high-frequency data can explain nitrate dynamics with exceptional precision which directly addressing the question posed in the problem description.
 
-**Lewis Run**, influenced by urban and agricultural runoff, shows the highest and most variable nitrate levels alongside elevated turbidity and specific conductance, typical of disturbed catchments. 
+### Contrasting River Stories
 
-In contrast, **Caribou Creek** in Alaska remains low and stable across all parameters, reflecting its pristine sub-arctic environment.
+Although the same modelling approach worked across all three rivers, the nitrate patterns differed markedly by site (@fig-box).
 
-The **Arikaree River** lies between these extremes, with low nitrate but wide variation in temperature due to its semi-arid climate.
+**Lewis Run**, an urban–agricultural stream, showed the highest and most variable nitrate and conductivity levels, reflecting runoff and wastewater influences.</br>
+**Caribou Creek**, a protected subarctic watershed, remained low and stable across all variables.</br>
+**Arikaree River**, in a semi-arid landscape, exhibited strong temperature swings and intermittent flow, producing modest but distinct nitrate peaks after rainfall.
 
-These differences highlight the environmental diversity captured by the high-frequency sensors used in the study.
+![Water-quality boxplots for the three NEON sites, showing large differences in nitrate levels and overall variability. Source: Kermorvant et al. (2023, Figure 1).](fig1.png){#fig-box fig-align="center" width=70% fig-pos="H"}
 
-![Water-quality boxplots for the three NEON sites, showing large differences in nitrate levels and overall variability. Source: Kermorvant et al. (2023, Figure 1).](fig2.png){#fig-perf fig-align="center" width=70% fig-pos="H"}
+### Which Factors Matter Most?
 
-Overall, the analysis confirms that high-frequency data from inexpensive, routinely measured sensors can successfully explain nitrate variation when combined with advanced modelling.
-By capturing 99% of nitrate dynamics without relying on costly instruments, this approach proves that complex water-quality behaviour can be understood through smarter use of existing technology.
-These results not only answer the central question, showing that affordable sensors and data science can replace expensive monitoring systems, but also highlight a path toward more sustainable freshwater management.
+Finally, the researchers examined which variables contributed most to explaining nitrate variation (@fig-importance).
 
-# Why These Findings Matter?
+Across all rivers, conductivity and temperature were the strongest predictors, both measured by inexpensive and reliable sensors.
 
+![Relative importance of each water-quality variable in explaining nitrate concentration across the three NEON study sites. Source: Kermorvant et al. (2023, Figure 4).](fig4.png){#fig-importance fig-align="center" width=70% fig-pos="H"}
 
+At **Lewis Run**, conductivity and turbidity dominated, consistent with nutrient-rich urban runoff.</br>
+At **Caribou Creek**, temperature and surface elevation were strongest, reflecting thaw-driven nutrient pulses.</br>
+At **Arikaree River**, smaller but consistent effects pointed to biological uptake in its dry environment.
 
+Together, these results show that the same inexpensive sensors can reveal key nitrate drivers across diverse climates, proving that cheaper monitoring doesn’t mean weaker science.
 
+### Back to the Question
+
+The findings from [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) provide a clear answer to the question posed earlier:
+
+> Yes, data from cheaper, routinely measured sensors, when paired with advanced models, can accurately describe nitrate dynamics across diverse environments.
+
+By capturing nearly 99% of nitrate variation without relying on costly instruments, this study demonstrates that data science can make water monitoring both smarter and more affordable.
+
+It closes the gap between costly precision and practical sustainability — a step toward cleaner, well-managed rivers supported by intelligent use of the data we already collect.
