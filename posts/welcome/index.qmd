@@ -193,7 +193,7 @@ Ultimately, this approach bridges the gap between data availability and environm
 
 > Rather than replacing sensors, data science ensures that every reading counts.
 
-##s Reference
+### Reference
 
 Kermorvant, C., Liquet, B., Litt, G., Mengersen, K., Peterson, E. E., Hyndman, R. J., Jones, J. B., & Leigh, C. (2023). *Understanding links between water-quality variables and nitrate concentration in freshwater streams using high frequency sensor data. PLoS ONE, 18(6)*, e0287640. https://doi.org/10.1371/journal.pone.0287640
 
