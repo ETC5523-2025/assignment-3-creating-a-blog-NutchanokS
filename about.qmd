@@ -1,6 +1,8 @@
 ---
 title: "Nutchanok Saitin"
 image: profile.jpg
+page-layout: full 
+class: about-wide
 about:
   template: trestles
   image-shape: round
@@ -14,10 +16,13 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/nutchanok-saitin-9022a6189
-
 ---
 
-Hi there!👋 I am a Master of Business Analytics student at Monash University, building on a strong foundation in accounting and finance. I hold a Bachelor’s degree in Accounting from Thammasat University, where I graduated with first-class honours.
+<span style="font-size: 1.8rem; color: #4E8EBF; font-weight: 500;">
+**Hi there!👋** 
+</span>
+
+I am a Master of Business Analytics student at Monash University, building on a strong foundation in accounting and finance. I hold a Bachelor’s degree in Accounting from Thammasat University, where I graduated with first-class honours.
 
 Before pursuing postgraduate study, I worked in auditing and accounting roles within the manufacturing and oil & gas industries. These experiences strengthened my analytical and problem-solving skills and sparked my interest in using data-driven insights to improve business performance.
 
