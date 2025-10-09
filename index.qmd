@@ -1,5 +1,6 @@
 ---
-title: "ETC5523 Blog Assessment"
+title: "ETC5523: Communicating with Data"
+subtitle: "Assignment 3: Blog Post"
 listing:
   contents: posts
   sort: "date desc"
