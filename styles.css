@@ -13,8 +13,14 @@
   vertical-align: middle;
 }
 
-.navbar-brand:hover {
-  color: #FFD166;
+.navbar a:hover,
+.navbar a:focus,
+.navbar .bi:hover,
+.navbar .fa:hover,
+.navbar .fab:hover,
+.navbar .fas:hover {
+  color: #FFD166 !important;
+  text-decoration: none;
 }
 
 .quarto-title-banner {

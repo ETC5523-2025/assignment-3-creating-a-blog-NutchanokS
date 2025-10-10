@@ -227,8 +227,8 @@ ul.task-list li input[type="checkbox"] {
 <div aria-describedby="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-be4e22ef287fed719eed" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-be4e22ef287fed719eed">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[39.758206,65.15322399999999,39.095637],[-102.44715,-147.50397,-77.983216],6,null,null,{"interactive":true,"className":"","stroke":true,"color":"#006DAE","weight":5,"opacity":0.5,"fill":true,"fillColor":"#006DAE","fillOpacity":0.9},null,null,["Arikaree River (Colorado)","Caribou Creek (Alaska)","Lewis Run (Virginia)"],null,["Arikaree River (Colorado)","Caribou Creek (Alaska)","Lewis Run (Virginia)"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addLegend","args":[{"colors":["#006DAE"],"labels":["Study Sites"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"unknown","title":"NEON Sensor Locations","extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[39.095637,65.15322399999999],"lng":[-147.50397,-77.983216]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-886c142e0dfd84000fbe" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-886c142e0dfd84000fbe">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[39.758206,65.15322399999999,39.095637],[-102.44715,-147.50397,-77.983216],6,null,null,{"interactive":true,"className":"","stroke":true,"color":"#006DAE","weight":5,"opacity":0.5,"fill":true,"fillColor":"#006DAE","fillOpacity":0.9},null,null,["Arikaree River (Colorado)","Caribou Creek (Alaska)","Lewis Run (Virginia)"],null,["Arikaree River (Colorado)","Caribou Creek (Alaska)","Lewis Run (Virginia)"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addLegend","args":[{"colors":["#006DAE"],"labels":["Study Sites"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"bottomright","type":"unknown","title":"NEON Sensor Locations","extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[39.095637,65.15322399999999],"lng":[-147.50397,-77.983216]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -245,7 +245,7 @@ Figure&nbsp;1: Map showing the three NEON study sites across the United States f
 <p>High-frequency data reveal short-term river fluctuations that traditional grab-sampling often misses.</p>
 <p>As shown in <a href="#fig-diel" class="quarto-xref">Figure&nbsp;2</a>, the upper panels display daily cycles in temperature, oxygen, and other variables, showing rivers “breathe” through natural light and photosynthesis patterns. The lower panels show storm or flow events, with sharp spikes in turbidity or water level as runoff enters the system.</p>
 <p>Such fine-grained temporal resolution demonstrates why continuous monitoring with cheaper sensors is so powerful — it captures the fast processes that shape nitrate concentration but are invisible in sparse, manual sampling. However, to interpret these complex, non-linear dynamics, a flexible modelling approach is essential.</p>
-<div id="fig-diel" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H">
+<div id="fig-diel" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-diel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="fig2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H">
@@ -273,7 +273,7 @@ Figure&nbsp;2: High-frequency time-series for the three NEON sites, showing dail
 <p>For example, nitrate may rise with temperature up to a threshold, then fall as biological uptake increases which are patterns that linear models would miss.</p>
 <p>As illustrated in <a href="#fig-gamm" class="quarto-xref">Figure&nbsp;3</a>, these smooth relationships differ between sites: nitrate rose with conductivity at Lewis Run, indicating nutrient-rich runoff, while at Caribou Creek, temperature showed a thaw-related seasonal pulse.</p>
 <p>This diversity confirms that real rivers don’t behave linearly, reinforcing the need for flexible models like GAMMs to uncover how cheap sensor data relate to nitrate.</p>
-<div id="fig-gamm" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H">
+<div id="fig-gamm" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-gamm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="fig3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-pos="H">
@@ -342,7 +342,7 @@ Table&nbsp;1: Model performance comparison across the three NEON study sites.
 <h3 class="anchored" data-anchor-id="contrasting-river-stories">Contrasting River Stories</h3>
 <p>Although the same modelling approach worked across all three rivers, the nitrate patterns differed markedly by site (<a href="#fig-box" class="quarto-xref">Figure&nbsp;4</a>).</p>
 <p><strong>Lewis Run</strong>, an urban–agricultural stream, showed the highest and most variable nitrate and conductivity levels, reflecting runoff and wastewater influences.<br> <strong>Caribou Creek</strong>, a protected subarctic watershed, remained low and stable across all variables.<br> <strong>Arikaree River</strong>, in a semi-arid landscape, exhibited strong temperature swings and intermittent flow, producing modest but distinct nitrate peaks after rainfall.</p>
-<div id="fig-box" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H">
+<div id="fig-box" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-box-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="fig1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H">
@@ -358,7 +358,7 @@ Figure&nbsp;4: Water-quality boxplots for the three NEON sites, showing large di
 <h3 class="anchored" data-anchor-id="which-factors-matter-most">Which Factors Matter Most?</h3>
 <p>Finally, the researchers examined which variables contributed most to explaining nitrate variation (<a href="#fig-importance" class="quarto-xref">Figure&nbsp;5</a>).</p>
 <p>Across all rivers, conductivity and temperature were the strongest predictors, both measured by inexpensive and reliable sensors.</p>
-<div id="fig-importance" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" data-fig-pos="H">
+<div id="fig-importance" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-pos="H" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-importance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="fig4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-pos="H">
