@@ -1,5 +1,9 @@
 /* css styles */
 
+.navbar {
+  background-color: #4E8EBF;
+}
+
 .navbar a {
   color: #ffffff;
   margin-left: 1.35rem;
