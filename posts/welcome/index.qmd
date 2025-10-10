@@ -27,7 +27,7 @@ That’s why researchers have begun asking a new question:
 
 ### Uncovering Nitrate Patterns from High-Frequency Data
 
-Building on that question, the study by [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) provides a powerful real-world test of whether cheaper sensor data can indeed reveal how nitrate behaves in rivers.
+Building on that question, the study by [Kermorvant et al. (2023)](https://doi.org/10.1371/journal.pone.0287640) provides a powerful real-world test of whether cheaper sensor data can indeed reveal how nitrate behaves in rivers.
 
 To investigate this, the researchers analysed high-frequency water-quality records from the National Ecological Observatory Network (NEON), a U.S. program that publishes open, standardised environmental data.
 
@@ -173,7 +173,7 @@ Together, these results show that the same inexpensive sensors can reveal key ni
 ### Back to the Question
 
 So, can we really understand nitrate using only cheaper sensors?</br>
-The findings from [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) provide a clear answer:
+The findings from [Kermorvant et al. (2023)](https://doi.org/10.1371/journal.pone.0287640) provide a clear answer:
 
 > Yes — data from cheaper, routinely measured sensors, when paired with advanced models, can accurately describe nitrate dynamics across diverse environments.
 
@@ -181,9 +181,9 @@ By capturing nearly 99% of nitrate variation without relying on costly instrumen
 
 It closes the gap between costly precision and practical sustainability — a step toward cleaner, well-managed rivers supported by intelligent use of the data we already collect.
 
-## Smarter Data for Sustainable Rivers
+### Smarter Data for Sustainable Rivers
 
-The findings from [Kermorvant et al. (2023)](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://research-management.mq.edu.au/ws/portalfiles/portal/296641846/journal.pone.0287640.pdf) show that smart use of affordable sensor data can unlock a deeper understanding of water-quality dynamics.
+The findings from [Kermorvant et al. (2023)](https://doi.org/10.1371/journal.pone.0287640) show that smart use of affordable sensor data can unlock a deeper understanding of water-quality dynamics.
 
 By combining routinely measured variables such as conductivity, temperature, and turbidity with advanced statistical models, the researchers explained nearly all variation in nitrate concentration across three very different river systems.
 
@@ -193,7 +193,7 @@ Ultimately, this approach bridges the gap between data availability and environm
 
 > Rather than replacing sensors, data science ensures that every reading counts.
 
-### Reference
+## Reference
 
-Kermorvant, C., Liquet, B., Litt, G., Mengersen, K., Peterson, E. E., Hyndman, R. J., Jones, J. B., & Leigh, C. (2023). *Understanding links between water-quality variables and nitrate concentration in freshwater streams using high frequency sensor data. PLoS ONE, 18(6)*, e0287640. https://doi.org/10.1371/journal.pone.0287640
+Kermorvant, C., Liquet, B., Litt, G., Mengersen, K., Peterson, E. E., Hyndman, R. J., Jones, J. B., & Leigh, C. (2023). *Understanding links between water-quality variables and nitrate concentration in freshwater streams using high frequency sensor data. PLoS ONE, 18(6)*, e0287640. <https://doi.org/10.1371/journal.pone.0287640>
 
